@@ -12,6 +12,7 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   path_provider: '^2.0.15'
+  shared_preferences: '^2.2.0' 
 
 dev_dependencies:
   flutter_test:
@@ -22,3 +23,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family: Handjet
+      fonts:
+        - asset: fonts/Handjet-Bold.ttf
+    - family: Oswald
+      fonts:
+        - asset: fonts/Oswald-Bold.ttf
