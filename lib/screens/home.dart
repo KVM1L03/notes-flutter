@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:notes2/cards/note_card.dart';
+import 'package:notes2/components/note_card.dart';
+import 'package:notes2/screens/new_note.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -14,7 +15,6 @@ class HomeScreenState extends State<HomeScreen> {
     'Note 1',
     'Note 2',
     'Note 3',
-    // Add more notes as needed
   ];
 
   void _openMenu(BuildContext context) {
@@ -25,6 +25,19 @@ class HomeScreenState extends State<HomeScreen> {
     setState(() {
       isDarkMode = !isDarkMode;
     });
+  }
+
+  void _addNewNote() async {
+    String? newNote = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => NewNoteScreen()),
+    );
+
+    if (newNote != null) {
+      setState(() {
+        notes.add(newNote);
+      });
+    }
   }
 
   @override
@@ -67,6 +80,12 @@ class HomeScreenState extends State<HomeScreen> {
                 note: notes[index],
               );
             }),
+        floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              _addNewNote();
+            },
+            backgroundColor: const Color.fromARGB(255, 217, 0, 255),
+            child: const Icon(Icons.add)),
       ),
     );
   }
