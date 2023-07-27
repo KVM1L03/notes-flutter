@@ -1,3 +1,3 @@
-# notes2
+# Flutter notes
 
-A new Flutter project.
+
