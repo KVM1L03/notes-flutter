@@ -99,6 +99,10 @@ class HomeScreenState extends State<HomeScreen> {
                 child: TextFormField(
                   onChanged: (query) => _filterNotes(query),
                   cursorColor: const Color.fromARGB(255, 217, 0, 255),
+                  style: const TextStyle(
+                    fontFamily: 'Handjet',
+                    fontSize: 18,
+                  ),
                   decoration: const InputDecoration(
                     hintText: 'Szukaj notatek ...',
                     prefixIcon: Icon(Icons.search),
